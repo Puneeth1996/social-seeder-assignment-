@@ -1,0 +1,57 @@
+Hi Puneeth,
+We are happy to inform you that you have been selected for our next round of interview. From now on it will all be technical. Our next round is a simple task. You need to develop a certain set of features using ReactJS. Please find the details of the task below:
+
+Task:
+Build a web app which will have the following features:
+•	Should be able to connect to https://newsapi.org/ and fetch news articles
+•	Build a screen which shows top 10 headlines
+•	Include a search box on top. Search should do a call to newsapi and fetch relevant articles.
+•	Clicking on the headline should take the user to the article with a back button. The back button will take the user back to the article list.
+Requirements:
+•	User reactJS, preferably create-react-app
+•	Use the https://newsapi.org/ api to retrieve the data
+•	Pay attention to semantics: any HTML might work, but choosing the right tags show you care
+•	Show us you know how to create a modern user interface using CSS or any CSS preprocessor / CSS-in-JS
+•	Send multiple requests to the news api concurrently
+•	Handle error and exception conditions.
+•	Give importance to user experience. Let the user know what is happening in the background.
+•	Comments will have added value.
+Deliverable:
+The deliverable for this task should be a zip file or github repo containing the react application. You should make sure that it’s easy to start the application.
+
+Time:
+You need to submit the code on or before 9th of October. Feel free to let us know in advance if there is going to be any delay.
+
+If you need any clarification, you can mail me back. If needed we can also schedule a call to clear things out.
+
+All the best and hope to see your reply soon.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
