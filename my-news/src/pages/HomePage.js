@@ -22,7 +22,7 @@ export default class HomePage extends Component {
                             <ListGroupItem>Published By {itm.author} At {itm.publishedAt}</ListGroupItem>
                         </ListGroup>
                         <Card.Body>
-                            <Card.Link href={itm.url}>Sourced</Card.Link>
+                            Source: <Card.Link href={itm.url}>{itm.source.name}</Card.Link>
                         </Card.Body>
                         </Card>
                     ))}

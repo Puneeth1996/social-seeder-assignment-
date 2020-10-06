@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import HomePage from './pages/HomePage';
+import ReaderPage from './pages/ReaderPage';
 
 import {BrowserRouter as Router, Route, Link, Switch  } from 'react-router-dom';
 
@@ -11,6 +12,7 @@ export default class App extends Component {
     this.state = {
       articles: [],
       search: "",
+      readerArr: [],
     }
   }
 
@@ -49,6 +51,7 @@ export default class App extends Component {
       <Router>
         <Switch>
           <Route path="/" exact render={() => <HomePage keyPress={this.keyPress} updateSearch={this.updateSearch} articles={this.state.articles} search={this.state.search} />} />
+          <Route path="/reader" exact render={() => <ReaderPage />} />
         </Switch>
       </Router>
     )
