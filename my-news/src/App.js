@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Card, Dropdown } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Card, ListGroup, ListGroupItem, CardGroup,  } from 'react-bootstrap';
 import './App.css';
 
 
@@ -25,21 +26,13 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        {this.state.articles.map( (itm, index) => (
-          
+        <CardGroup>
+            
+          {this.state.articles.map( (itm, index) => (
+            
             <>
-              <Card className="bg-dark text-white">
-                <Card.Img src={itm.urlToImage} style={ {  width: 200, height: 120, } } alt="Card image" />
-                <Card.ImgOverlay>
-                  <Card.Title>{itm.title}</Card.Title>
-                  <Card.Text>
-                    {itm.description}
-                  </Card.Text>
-                  <Card.Text>{itm.publishedAt}</Card.Text>
-                </Card.ImgOverlay>
-              </Card>
               <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={itm.urlToImage} />
+                <Card.Img variant="top" src={itm.urlToImage} style={{ width: '18rem', hieght: '14rem' }} />
                 <Card.Body>
                   <Card.Title>{itm.title}</Card.Title>
                   <Card.Text>{itm.description}</Card.Text>
@@ -54,7 +47,9 @@ export default class App extends Component {
               </Card>
             </>
           
-        ) )}
+          ) )}
+
+        </CardGroup>
       </div>
     )
   }
