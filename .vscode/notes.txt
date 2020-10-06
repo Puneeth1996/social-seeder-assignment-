@@ -3,3 +3,5 @@
 6 Oct 2018 
 
 http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=24317ff2add448729f246e75e63393e7
+    width: 200px, height: 120px,
+
