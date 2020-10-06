@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Card, ListGroup, ListGroupItem, CardColumns,  } from 'react-bootstrap';
+import { Card, ListGroup, ListGroupItem, CardColumns, Form, FormControl,   } from 'react-bootstrap';
 import './App.css';
 
 
@@ -28,7 +28,7 @@ export default class App extends Component {
       <div>
 
 
-        <Form inline style={{ margin: "0 0 10vh 25vw"}}>
+        <Form inline style={{ margin: "20vh 0 10vh 25vw"}}>
             <FormControl type="text" placeholder="Search" value={this.state.search} onChange={this.updateSearch} className="mr-sm-2"  style={{ width: "50%"}} />
         </Form>
 
