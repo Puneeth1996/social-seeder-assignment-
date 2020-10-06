@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Card, ListGroup, ListGroupItem, CardColumns, FormControl,   } from 'react-bootstrap';
 import './App.css';
+import HomePage from './pages/HomePage';
 
+import {BrowserRouter as Router, Route, Link, Switch  } from 'react-router-dom';
 
 export default class App extends Component {
   constructor(props){
@@ -11,7 +12,6 @@ export default class App extends Component {
       articles: [],
       search: "",
     }
-
   }
 
   componentDidMount(){
@@ -46,33 +46,11 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
-
-        {/* <Form inline style={{ margin: "20vh 0 10vh 25vw"}}>
-            <FormControl type="text" placeholder="Search" value={this.state.search} onChange={this.updateSearch} className="mr-sm-2"  style={{ width: "50%"}}  onSubmit={ () => this.submitHandler() } />
-        </Form> */}
-
-        <FormControl style={{ margin: "20vh 0 10vh 25vw",  width: "50%"}} type="text" placeholder="Search" value={this.state.search} onChange={this.updateSearch}  onKeyDown={this.keyPress} className="mr-sm-2"  />
-        <CardColumns  md={6}>
-            
-          {this.state.articles.map( (itm, index) => (
-              <Card key={itm.publishedAt} style={{ width: '25rem', marginLeft: '1.75rem' }}>
-                <Card.Img variant="top" src={itm.urlToImage} style={{ width: '25rem', hieght: '14rem' }} />
-                <Card.Body>
-                  <Card.Title>{itm.title}</Card.Title>
-                  <Card.Text>{itm.description}</Card.Text>
-                </Card.Body>
-                <ListGroup className="list-group-flush">
-                  <ListGroupItem>Published At {itm.publishedAt}</ListGroupItem>
-                </ListGroup>
-                <Card.Body>
-                  <Card.Link href={itm.url}>Sourced</Card.Link>
-                </Card.Body>
-              </Card>
-          ) )}
-
-        </CardColumns>
-      </div>
+      <Router>
+        <Switch>
+          <Route path="/" exact render={() => <HomePage keyPress={this.keyPress} updateSearch={this.updateSearch} articles={this.state.articles} search={this.state.search} />} />
+        </Switch>
+      </Router>
     )
   }
 }
