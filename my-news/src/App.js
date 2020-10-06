@@ -30,12 +30,18 @@ export default class App extends Component {
   }
 
   keyPress = (e) => {
-    if(e.keyCode == 13){
-      // console.log('value', e.target.value);
+    if(e.keyCode == 13 && this.state.search){
       let searchTerm = e.target.value
       this.setState({ search: "" })
-      // put the login here
-      console.log(searchTerm)
+      fetch(`https://newsapi.org/v2/everything?q=${searchTerm}&apiKey=24317ff2add448729f246e75e63393e7`, {mode: 'cors'})
+      .then( (resp) => {
+        console.log(resp.json())
+        return resp.json();
+      })
+      .then( (myJson) => {
+        this.setState({ articles: myJson.articles });
+      });
+      
     }
   }
 
