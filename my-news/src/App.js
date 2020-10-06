@@ -46,11 +46,16 @@ export default class App extends Component {
     }
   }
 
+
+  handleShowMore = (cardItm) => {
+    console.log("clicked")
+  }
+
   render() {
     return (
       <Router>
         <Switch>
-          <Route path="/" exact render={() => <HomePage keyPress={this.keyPress} updateSearch={this.updateSearch} articles={this.state.articles} search={this.state.search} />} />
+          <Route path="/" exact render={() => <HomePage keyPress={this.keyPress} updateSearch={this.updateSearch} articles={this.state.articles} search={this.state.search} />} handleShowMore={this.handleShowMore} />
           <Route path="/reader" exact render={() => <ReaderPage />} />
         </Switch>
       </Router>
