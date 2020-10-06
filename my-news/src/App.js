@@ -35,7 +35,6 @@ export default class App extends Component {
       this.setState({ search: "" })
       fetch(`https://newsapi.org/v2/everything?q=${searchTerm}&apiKey=24317ff2add448729f246e75e63393e7`, {mode: 'cors'})
       .then( (resp) => {
-        console.log(resp.json())
         return resp.json();
       })
       .then( (myJson) => {
