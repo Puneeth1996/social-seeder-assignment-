@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Card, ListGroup, ListGroupItem, CardColumns, Form, FormControl,   } from 'react-bootstrap';
+import { Card, ListGroup, ListGroupItem, CardColumns, FormControl,   } from 'react-bootstrap';
 import './App.css';
 
 
@@ -30,7 +30,7 @@ export default class App extends Component {
   }
 
   keyPress = (e) => {
-    if(e.keyCode == 13 && this.state.search){
+    if(e.keyCode === 13 && this.state.search){
       let searchTerm = e.target.value
       this.setState({ search: "" })
       fetch(`https://newsapi.org/v2/everything?q=${searchTerm}&apiKey=24317ff2add448729f246e75e63393e7`, {mode: 'cors'})
@@ -48,7 +48,6 @@ export default class App extends Component {
     return (
       <div>
 
-
         {/* <Form inline style={{ margin: "20vh 0 10vh 25vw"}}>
             <FormControl type="text" placeholder="Search" value={this.state.search} onChange={this.updateSearch} className="mr-sm-2"  style={{ width: "50%"}}  onSubmit={ () => this.submitHandler() } />
         </Form> */}
@@ -64,11 +63,10 @@ export default class App extends Component {
                   <Card.Text>{itm.description}</Card.Text>
                 </Card.Body>
                 <ListGroup className="list-group-flush">
-                  <ListGroupItem>{itm.publishedAt}</ListGroupItem>
+                  <ListGroupItem>Published At {itm.publishedAt}</ListGroupItem>
                 </ListGroup>
                 <Card.Body>
-                  <Card.Link href="#">Card Link</Card.Link>
-                  <Card.Link href={itm.url}>Read Full</Card.Link>
+                  <Card.Link href={itm.url}>Sourced</Card.Link>
                 </Card.Body>
               </Card>
           ) )}
