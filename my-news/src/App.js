@@ -26,6 +26,12 @@ export default class App extends Component {
   render() {
     return (
       <div>
+
+
+        <Form inline style={{ margin: "0 0 10vh 25vw"}}>
+            <FormControl type="text" placeholder="Search" value={this.state.search} onChange={this.updateSearch} className="mr-sm-2"  style={{ width: "50%"}} />
+        </Form>
+
         <CardColumns  md={6}>
             
           {this.state.articles.map( (itm, index) => (
