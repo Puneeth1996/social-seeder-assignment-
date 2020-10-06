@@ -53,13 +53,10 @@ export default class App extends Component {
             <FormControl type="text" placeholder="Search" value={this.state.search} onChange={this.updateSearch} className="mr-sm-2"  style={{ width: "50%"}}  onSubmit={ () => this.submitHandler() } />
         </Form> */}
 
-          <FormControl style={{ margin: "20vh 0 10vh 25vw",  width: "50%"}} type="text" placeholder="Search" value={this.state.search} onChange={this.updateSearch}  onKeyDown={this.keyPress} className="mr-sm-2"  />
-
+        <FormControl style={{ margin: "20vh 0 10vh 25vw",  width: "50%"}} type="text" placeholder="Search" value={this.state.search} onChange={this.updateSearch}  onKeyDown={this.keyPress} className="mr-sm-2"  />
         <CardColumns  md={6}>
             
           {this.state.articles.map( (itm, index) => (
-            
-            
               <Card key={itm.publishedAt} style={{ width: '25rem', marginLeft: '1.75rem' }}>
                 <Card.Img variant="top" src={itm.urlToImage} style={{ width: '25rem', hieght: '14rem' }} />
                 <Card.Body>
@@ -74,8 +71,6 @@ export default class App extends Component {
                   <Card.Link href={itm.url}>Read Full</Card.Link>
                 </Card.Body>
               </Card>
-            
-          
           ) )}
 
         </CardColumns>
