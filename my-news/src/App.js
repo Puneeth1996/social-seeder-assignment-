@@ -9,6 +9,7 @@ export default class App extends Component {
     super(props);
     this.state = {
       articles: [],
+      search: "",
     }
 
   }
@@ -23,21 +24,38 @@ export default class App extends Component {
     });
   }
   
+
+  updateSearch = (evt) => {
+    this.setState({ search: evt.target.value.substr(0,25) })
+  }
+
+  keyPress = (e) => {
+    if(e.keyCode == 13){
+      // console.log('value', e.target.value);
+      let searchTerm = e.target.value
+      this.setState({ search: "" })
+      // put the login here
+      console.log(searchTerm)
+    }
+  }
+
   render() {
     return (
       <div>
 
 
-        <Form inline style={{ margin: "20vh 0 10vh 25vw"}}>
-            <FormControl type="text" placeholder="Search" value={this.state.search} onChange={this.updateSearch} className="mr-sm-2"  style={{ width: "50%"}} />
-        </Form>
+        {/* <Form inline style={{ margin: "20vh 0 10vh 25vw"}}>
+            <FormControl type="text" placeholder="Search" value={this.state.search} onChange={this.updateSearch} className="mr-sm-2"  style={{ width: "50%"}}  onSubmit={ () => this.submitHandler() } />
+        </Form> */}
+
+          <FormControl style={{ margin: "20vh 0 10vh 25vw",  width: "50%"}} type="text" placeholder="Search" value={this.state.search} onChange={this.updateSearch}  onKeyDown={this.keyPress} className="mr-sm-2"  />
 
         <CardColumns  md={6}>
             
           {this.state.articles.map( (itm, index) => (
             
-            <>
-              <Card style={{ width: '25rem', marginLeft: '1.75rem' }}>
+            
+              <Card key={itm.publishedAt} style={{ width: '25rem', marginLeft: '1.75rem' }}>
                 <Card.Img variant="top" src={itm.urlToImage} style={{ width: '25rem', hieght: '14rem' }} />
                 <Card.Body>
                   <Card.Title>{itm.title}</Card.Title>
@@ -48,10 +66,10 @@ export default class App extends Component {
                 </ListGroup>
                 <Card.Body>
                   <Card.Link href="#">Card Link</Card.Link>
-                  <Card.Link href="#">Another Link</Card.Link>
+                  <Card.Link href={itm.url}>Read Full</Card.Link>
                 </Card.Body>
               </Card>
-            </>
+            
           
           ) )}
 
