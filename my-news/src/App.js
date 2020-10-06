@@ -32,6 +32,7 @@ export default class App extends Component {
   }
 
   keyPress = (e) => {
+    console.log(e.target.value)
     if(e.keyCode === 13 && this.state.search){
       let searchTerm = e.target.value
       this.setState({ search: "" })
@@ -46,12 +47,12 @@ export default class App extends Component {
     }
   }
 
-
-  handleShowMore = (cardItm) => {
+  handleShowMore = (e) => {
     console.log("clicked")
   }
 
   render() {
+    console.log(this.handleShowMore("click"))
     return (
       <Router>
         <Switch>
