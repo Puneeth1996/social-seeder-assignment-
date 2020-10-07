@@ -14,6 +14,7 @@ export default class App extends Component {
       search: "",
       readerArr: [],
     }
+    this.handleClick.bind(this)
   }
 
   componentDidMount(){
@@ -47,12 +48,15 @@ export default class App extends Component {
     }
   }
 
-  handleShowMore = (e) => {
-    console.log("clicked")
+  // handleShowMore =  (itemArray)  => {
+  //   console.log(itemArray)
+  // }
+
+  handleShowMore(name) {
+    console.log(`hello, ${name}`);
   }
 
   render() {
-    console.log(this.handleShowMore("click"))
     return (
       <Router>
         <Switch>
