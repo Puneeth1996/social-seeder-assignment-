@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-
 import { Card, ListGroup, ListGroupItem, CardColumns, FormControl,   } from 'react-bootstrap';
 
 export default class HomePage extends Component {
-    constructor(props){
-        super(props);
-    }
     render() {
         return (
             <div>
