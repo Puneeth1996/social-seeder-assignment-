@@ -16,12 +16,10 @@ export default class ReaderPage extends Component {
         return (
             <div>
                 <div>
-                    <Button variant="outline-secondary"  style={{float: 'right', margin: '1rem'}}   onClick={ this.props.handleBackButton  }  >Back To Home</Button>{' '}
+                    <Button variant="outline-secondary"  style={{float: 'right', margin: '10px'}}   onClick={ this.props.handleBackButton  }  >Back To Home</Button>{' '}
                 </div>
                 <div  style={{ marginTop: '10rem' }}   >
-                    <h1>
-                        Example heading <Badge variant="secondary">New</Badge>
-                    </h1>
+                    <h1>{title}</h1>
                 </div>
             </div>
         )
