@@ -49,16 +49,20 @@ export default class App extends Component {
   }
 
   handleShowMore = (itemArr) => {
-    // console.log(itemArr)
     this.setState( { reading: true, readerArr: itemArr } )
   }
 
+
+
+  handleBackButton = (itemArr) => {
+    console.log("Handle Back Button . . . ")
+  }
 
   render() {
     return (
       <Router>
         <Switch>
-          <Route path="/" exact render={ this.state.reading ? () => <ReaderPage /> :  () => <HomePage keyPress={this.keyPress} updateSearch={this.updateSearch} articles={this.state.articles} search={this.state.search} handleShowMore={this.handleShowMore} />} />
+          <Route path="/" exact render={ this.state.reading ? () => <ReaderPage handleBackButton={this.handleBackButton}/> :  () => <HomePage keyPress={this.keyPress} updateSearch={this.updateSearch} articles={this.state.articles} search={this.state.search} handleShowMore={this.handleShowMore} />} />
           <Route path="/reader" exact render={() => <ReaderPage />} />
         </Switch>
       </Router>
