@@ -47,8 +47,8 @@ export default class App extends Component {
     }
   }
 
-  handleShowMore = (event) => {
-    console.log(event)
+  handleShowMore = (itemArr) => {
+    console.log(itemArr)
   }
 
 

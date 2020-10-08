@@ -7,7 +7,6 @@ export default class HomePage extends Component {
         super(props);
     }
     render() {
-        console.log(this.props)
         return (
             <div>
                 <FormControl style={{ margin: "20vh 0 10vh 25vw",  width: "50%"}} type="text" placeholder="Search" value={this.props.search} onChange={this.props.updateSearch}  onKeyDown={this.props.keyPress} className="mr-sm-2"  />
