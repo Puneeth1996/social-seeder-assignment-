@@ -14,7 +14,7 @@ export default class HomePage extends Component {
                 <CardColumns  md={6}>
                     {this.props.articles.map( (itm, index) => 
                         (
-                            <Card key={itm.publishedAt + itm.author}  onClick={ () => { this.props.handleShowMore(('James')) } } style={{ width: '25rem', marginLeft: '1.75rem' }}>
+                            <Card key={itm.publishedAt + itm.author}  onClick={ () => { this.props.handleShowMore(itm) } } style={{ width: '25rem', marginLeft: '1.75rem' }}>
                                 <Card.Img variant="top" src={itm.urlToImage} style={{ width: '25rem', hieght: '14rem' }} />
                                 <Card.Body>
                                     <Card.Title>{itm.title}</Card.Title>

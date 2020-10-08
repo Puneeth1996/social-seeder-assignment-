@@ -14,7 +14,6 @@ export default class App extends Component {
       search: "",
       readerArr: [],
     }
-    this.handleClick.bind(this)
   }
 
   componentDidMount(){
@@ -48,19 +47,16 @@ export default class App extends Component {
     }
   }
 
-  // handleShowMore =  (itemArray)  => {
-  //   console.log(itemArray)
-  // }
-
-  handleShowMore(name) {
-    console.log(`hello, ${name}`);
+  handleShowMore = (event) => {
+    console.log(event)
   }
+
 
   render() {
     return (
       <Router>
         <Switch>
-          <Route path="/" exact render={() => <HomePage keyPress={this.keyPress} updateSearch={this.updateSearch} articles={this.state.articles} search={this.state.search} />} handleShowMore={this.handleShowMore} />
+          <Route path="/" exact render={() => <HomePage keyPress={this.keyPress} updateSearch={this.updateSearch} articles={this.state.articles} search={this.state.search} handleShowMore={this.handleShowMore} />} />
           <Route path="/reader" exact render={() => <ReaderPage />} />
         </Switch>
       </Router>
