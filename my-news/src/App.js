@@ -13,6 +13,7 @@ export default class App extends Component {
       articles: [],
       search: "",
       readerArr: [],
+      reading: false,
     }
   }
 
@@ -48,7 +49,8 @@ export default class App extends Component {
   }
 
   handleShowMore = (itemArr) => {
-    console.log(itemArr)
+    // console.log(itemArr)
+    this.setState( { reading: true, readerArr: itemArr } )
   }
 
 
@@ -56,7 +58,7 @@ export default class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route path="/" exact render={() => <HomePage keyPress={this.keyPress} updateSearch={this.updateSearch} articles={this.state.articles} search={this.state.search} handleShowMore={this.handleShowMore} />} />
+          <Route path="/" exact render={ this.state.reading ? () => <ReaderPage /> :  () => <HomePage keyPress={this.keyPress} updateSearch={this.updateSearch} articles={this.state.articles} search={this.state.search} handleShowMore={this.handleShowMore} />} />
           <Route path="/reader" exact render={() => <ReaderPage />} />
         </Switch>
       </Router>
