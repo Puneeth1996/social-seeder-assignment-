@@ -62,7 +62,7 @@ export default class App extends Component {
       <Router>
         <Switch>
           <Route path="/" exact render={ this.state.reading ? () => <ReaderPage handleBackButton={this.handleBackButton} readerArr={this.state.readerArr} /> :  () => <HomePage keyPress={this.keyPress} updateSearch={this.updateSearch} articles={this.state.articles} search={this.state.search} handleShowMore={this.handleShowMore} />} />
-          <Route path="/reader" exact render={() => <ReaderPage />} />
+          {/* <Route path="/reader" exact render={() => <ReaderPage />} /> */}
         </Switch>
       </Router>
     )

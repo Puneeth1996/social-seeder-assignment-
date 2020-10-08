@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Image,    } from 'react-bootstrap';
+import {  Image,    } from 'react-bootstrap';
 
 export default class ReaderPage extends Component {  
     render() {
@@ -40,7 +40,7 @@ export default class ReaderPage extends Component {
                     <p  style={{ margin: '1rem 4rem 6rem 4rem' }}  >{content}{content}{content}{content}{content}{content}{content}{content}{content}{content}</p>
                 </div>
                 <div  style={{ margin: '2rem 2rem 2rem 2rem' }}   > <p> By <span>{author}</span> on <span>{publishedAt}</span>  </p>
-                <p>Taken From <a href={url}> Article </a> </p>
+                <p>Taken From <a href={url}  target="_blank"  rel="noopener noreferrer" > Article </a> </p>
                 </div>
             </div>
         )
