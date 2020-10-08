@@ -39,7 +39,9 @@ export default class ReaderPage extends Component {
                     <h3  style={{ margin: '1rem 2rem 6rem 2rem' }}  >{description}</h3>
                     <p  style={{ margin: '1rem 4rem 6rem 4rem' }}  >{content}{content}{content}{content}{content}{content}{content}{content}{content}{content}</p>
                 </div>
-
+                <div  style={{ margin: '2rem 2rem 2rem 2rem' }}   > <p> By <span>{author}</span> on <span>{publishedAt}</span>  </p>
+                <p>Taken From <a href={url}> Article </a> </p>
+                </div>
             </div>
         )
     }
