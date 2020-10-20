@@ -4,7 +4,6 @@ import {  Image,    } from 'react-bootstrap';
 export default class ReaderPage extends Component {  
     render() {
         const {
-            source, 
             author, 
             title, 
             description, 
