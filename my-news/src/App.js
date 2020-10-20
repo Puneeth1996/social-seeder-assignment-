@@ -17,7 +17,7 @@ export default class App extends Component {
   }
 
   componentDidMount(){
-    fetch('http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=24317ff2add448729f246e75e63393e7')
+    fetch('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=24317ff2add448729f246e75e63393e7')
     .then( (resp) => {
       return resp.json();
     })
